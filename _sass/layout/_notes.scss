@@ -1,0 +1,122 @@
+.notes-intro {
+  margin: 0 0 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--global-border-color);
+  color: var(--global-text-color);
+  line-height: 1.75;
+}
+
+.notes-intro ul {
+  margin-top: 0.8rem;
+}
+
+.page__content mjx-container[display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding: 0.25rem 0;
+}
+
+.notes-index {
+  margin-top: 1.25rem;
+}
+
+.notes-section {
+  margin: 0 0 2.25rem;
+}
+
+.notes-section__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+.notes-section__header h2 {
+  margin: 0;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--global-text-color);
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.notes-section__header span {
+  color: var(--global-text-color-light);
+  font-size: 0.72rem;
+}
+
+.notes-list {
+  display: grid;
+  gap: 0;
+}
+
+.note-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+.note-entry__title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.note-entry__meta {
+  color: var(--global-text-color-light);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.note-entry__summary {
+  color: var(--global-text-color);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+.note-entry__summary p {
+  margin: 0;
+}
+
+.note-entry__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.15rem;
+}
+
+.note-entry__tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.25rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid var(--global-border-color);
+  border-radius: 3px;
+  color: var(--global-text-color-light);
+  font-size: 0.66rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 48em) {
+  .note-entry {
+    grid-template-columns: minmax(0, 1fr) 6.5rem;
+    column-gap: 1.25rem;
+  }
+
+  .note-entry__meta {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    padding-top: 0.15rem;
+  }
+
+  .note-entry__summary,
+  .note-entry__tags {
+    grid-column: 1 / -1;
+  }
+}

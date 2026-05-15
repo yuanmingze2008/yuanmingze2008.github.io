@@ -7,6 +7,8 @@ tags:
   - cnn
   - resnet
   - notes
+note_group: "Deep Learning"
+summary: "整理 CNN、ResNet、残差连接、Bottleneck、Group Convolution 与优化器相关理解。"
 source_note: "local source file, not uploaded"
 ---
 

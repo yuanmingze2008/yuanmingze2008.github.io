@@ -10,14 +10,49 @@ redirect_from:
 
 {% include base_path %}
 
-这里主要整理中文学习笔记，包括深度学习、Agent、论文阅读和科研工具链。笔记优先追求可追溯、可复查，而不是一次性写成完整教程。
+<div class="notes-intro" markdown="1">
+这里整理中文学习笔记，主要包括 **Deep Learning**、**Agent Research** 和科研工具链。笔记优先保持可追溯、可复查，后续会逐步从原始学习记录整理成更稳定的主题索引。
 
-{% capture written_year %}'None'{% endcapture %}
-{% for post in site.posts %}
-  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-  {% if year != written_year %}
-    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
-    {% capture written_year %}{{ year }}{% endcapture %}
-  {% endif %}
-  {% include archive-single.html %}
-{% endfor %}
+- 文章正文支持 Markdown。
+- 数学公式使用 MathJax 渲染，支持 `$...$` 与 `$$...$$`。
+- 列表页只展示摘要，完整推导和代码块进入文章后阅读。
+</div>
+
+{% assign groups = "Deep Learning|Agent Research|Tools" | split: "|" %}
+
+<div class="notes-index">
+  {% for group in groups %}
+    {% assign group_posts = site.posts | where: "note_group", group | reverse %}
+    {% if group_posts.size > 0 %}
+      <section class="notes-section">
+        <div class="notes-section__header">
+          <h2>{{ group }}</h2>
+          <span>{{ group_posts.size }} notes</span>
+        </div>
+
+        <div class="notes-list">
+          {% for post in group_posts %}
+            <article class="note-entry">
+              <a class="note-entry__title" href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+              <div class="note-entry__meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+              </div>
+              {% if post.summary %}
+                <div class="note-entry__summary" markdown="1">{{ post.summary | markdownify }}</div>
+              {% elsif post.excerpt %}
+                <div class="note-entry__summary" markdown="1">{{ post.excerpt | markdownify | strip_html | truncate: 120 }}</div>
+              {% endif %}
+              {% if post.tags %}
+                <div class="note-entry__tags">
+                  {% for tag in post.tags %}
+                    <span class="note-entry__tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+  {% endfor %}
+</div>

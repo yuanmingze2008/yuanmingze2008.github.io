@@ -7,6 +7,8 @@ tags:
   - llm
   - reasoning
   - notes
+note_group: "Agent Research"
+summary: "整理 CoT、Zero-Shot CoT、Auto-CoT、ToT、GoT 等推理方式的基本思路与局限。"
 source_note: "local source file, not uploaded"
 ---
 

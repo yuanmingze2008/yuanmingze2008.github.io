@@ -7,6 +7,8 @@ tags:
   - computer-vision
   - object-detection
   - notes
+note_group: "Deep Learning"
+summary: "从 CNN 输出形式、候选框方法到 R-CNN 系列，梳理目标检测问题的核心矛盾与发展脉络。"
 source_note: "local source file, not uploaded"
 ---
 

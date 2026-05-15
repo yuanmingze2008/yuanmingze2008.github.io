@@ -7,10 +7,10 @@ tags:
   - math
   - optimization
   - notes
+note_group: "Deep Learning"
+summary: "围绕线性回归、逻辑回归、MSE、BCE 与 Hessian 半正定性整理损失函数凸性的推导。"
 source_note: "local source file, not uploaded"
 ---
-
-# 学习笔记：损失函数凸性分析 (Convexity Analysis)
 
 **主题**：Linear Regression vs. Logistic Regression (MSE vs. BCE)
 

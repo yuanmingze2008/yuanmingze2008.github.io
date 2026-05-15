@@ -7,10 +7,10 @@ tags:
   - llm
   - search
   - notes
+note_group: "Agent Research"
+summary: "围绕 MCTS、ReAct 与 LATS，记录搜索、行动、反馈和语言模型推理结合的基本框架。"
 source_note: "local source file, not uploaded"
 ---
-
-# MCTS
 
 一种强大的**决策**算法，用于**在特定决策过程中做出最优选择**的启发式搜索算法。
 

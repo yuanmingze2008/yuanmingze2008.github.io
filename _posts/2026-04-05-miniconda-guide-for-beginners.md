@@ -7,10 +7,10 @@ tags:
   - conda
   - tooling
   - notes
+note_group: "Tools"
+summary: "面向零基础环境配置的 Miniconda 安装、环境管理与常用命令笔记。"
 source_note: "local source file, not uploaded"
 ---
-
-# 零基础 Miniconda 指南
 
 
 
