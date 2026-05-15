@@ -10,12 +10,13 @@ redirect_from:
 
 {% include base_path %}
 
-<div class="notes-intro" markdown="1">
-这里整理中文学习笔记，主要包括 **Deep Learning**、**Agent Research** 和科研工具链。笔记优先保持可追溯、可复查，后续会逐步从原始学习记录整理成更稳定的主题索引。
-
-- 文章正文支持 Markdown。
-- 数学公式使用 MathJax 渲染，支持 `$...$` 与 `$$...$$`。
-- 列表页只展示摘要，完整推导和代码块进入文章后阅读。
+<div class="notes-intro">
+  <p>这里整理中文学习笔记，主要包括 <strong>Deep Learning</strong>、<strong>Agent Research</strong> 和科研工具链。笔记优先保持可追溯、可复查，后续会逐步从原始学习记录整理成更稳定的主题索引。</p>
+  <ul>
+    <li>文章正文支持 Markdown。</li>
+    <li>数学公式使用 MathJax 渲染，支持 <code>$...$</code> 与 <code>$$...$$</code>。</li>
+    <li>列表页只展示摘要，完整推导和代码块进入文章后阅读。</li>
+  </ul>
 </div>
 
 {% assign groups = "Deep Learning|Agent Research|Tools" | split: "|" %}
@@ -38,9 +39,9 @@ redirect_from:
                 <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
               </div>
               {% if post.summary %}
-                <div class="note-entry__summary" markdown="1">{{ post.summary | markdownify }}</div>
+                <div class="note-entry__summary">{{ post.summary | markdownify }}</div>
               {% elsif post.excerpt %}
-                <div class="note-entry__summary" markdown="1">{{ post.excerpt | markdownify | strip_html | truncate: 120 }}</div>
+                <div class="note-entry__summary">{{ post.excerpt | markdownify | strip_html | truncate: 120 }}</div>
               {% endif %}
               {% if post.tags %}
                 <div class="note-entry__tags">
